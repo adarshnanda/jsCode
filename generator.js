@@ -6,9 +6,7 @@ function *apiCalls(){
 	}
 }
 
-var iterator = apiCalls();
-
- function promise(param){
+let promise = (param)=>{
  	param.then((respJson)=>{
 			console.log(respJson);
 			var nextIterator = iterator.next();
@@ -19,17 +17,15 @@ var iterator = apiCalls();
 			console.log('error');
 		});
  }
-promise(iterator.next().value);
 
-
-function makeAjaxCall(url, methodType){
+let makeAjaxCall = (url, methodType)=>{
    var promiseObj = new Promise(function(resolve, reject){
       var xhr = new XMLHttpRequest();
       xhr.open(methodType, url, true);
-      setTimeout(function(){
+      setTimeout(()=>{
       	xhr.send();
       }, 10000);
-      xhr.onreadystatechange = function(){
+      xhr.onreadystatechange = ()=>{
       if (xhr.readyState === 4){
          if (xhr.status === 200){
             console.log("xhr done successfully");
@@ -48,3 +44,8 @@ function makeAjaxCall(url, methodType){
  });
    return promiseObj;
 }
+
+
+let iterator = apiCalls();
+
+promise(iterator.next().value);
