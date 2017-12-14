@@ -1,0 +1,9 @@
+var l = 0;
+function solution(a){
+    l = a.shift(0);
+    if(a.indexOf(l) > -1){
+        a.splice(a.indexOf(l),1);
+        solution(a);
+    }
+    return l;
+}
