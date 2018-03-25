@@ -11,3 +11,15 @@ function sendRepeatedText(content, numberofTimes){
 		whatsAppText(content);
 	}
 };
+function getDetails(){
+	let message = prompt("enter your message here");
+	let numbers = null;
+	if(message!=null&&message!=''){
+		numbers = prompt("how many times do you want to send it");
+	}
+	if(message!=null&&message!=''&&numbers!=null&&numbers!=''){
+		sendRepeatedText(message, numbers);
+	}
+}
+
+getDetails();
