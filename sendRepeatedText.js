@@ -1,8 +1,8 @@
 function whatsAppText(text){
-	let textbox = document.getElementsByClassName("pluggable-input-body copyable-text selectable-text")[0];
+	let textbox = document.getElementsByClassName("_2S1VP copyable-text selectable-text")[0];
 	textbox.textContent = text;
 	textbox.dispatchEvent(new Event('input',{bubbles:true}));
-	document.querySelector("button.compose-btn-send").click();
+	document.getElementsByClassName("_2lkdt")[0].click();
 }
 
 
@@ -11,6 +11,3 @@ function sendRepeatedText(content, numberofTimes){
 		whatsAppText(content);
 	}
 };
-
-
-sendRepeatedText("hii", 200);
