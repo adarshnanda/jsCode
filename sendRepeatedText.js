@@ -1,4 +1,4 @@
-function whatsAppText(text){
+let whatsAppText = (text) => {
 	let textbox = document.getElementsByClassName("_2S1VP copyable-text selectable-text")[0];
 	textbox.textContent = text;
 	textbox.dispatchEvent(new Event('input',{bubbles:true}));
@@ -6,12 +6,12 @@ function whatsAppText(text){
 }
 
 
-function sendRepeatedText(content, numberofTimes){
+let sendRepeatedText = (content, numberofTimes) => {
 	for(let i=0;i<numberofTimes;i++){
 		whatsAppText(content);
 	}
 };
-function getDetails(){
+let getDetails = ()=> {
 	let message = prompt("enter your message here");
 	let numbers = null;
 	if(message!=null&&message!=''){
