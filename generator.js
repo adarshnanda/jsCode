@@ -24,7 +24,7 @@ let makeAjaxCall = (url, methodType)=>{
       xhr.open(methodType, url, true);
       setTimeout(()=>{
       	xhr.send();
-      }, 10000);
+      }, 1000);
       xhr.onreadystatechange = ()=>{
       if (xhr.readyState === 4){
          if (xhr.status === 200){
