@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{
+width:50px;
+height:50px;
+background-color:black;
+margin-bottom: 10px;
+text-align:center;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var count=1;
+var prev = 0;
+var cancel ;
+function lightUp(){
+prev = count-1;
+        if(prev===0){
+        prev = 3;
+        }
+        $("#id"+prev+">div").css("color","black");
+    
+        $("#id"+count+">div").css("color","red");
+        count++;
+        if(count>3){
+        count=1;
+        }
+
+}
+$(document).ready(function(){
+	$("div").addClass("box");
+    $("button").click(function(){
+    	if(cancel){
+    	clearInterval(cancel);
+        cancel = null;
+        }else{
+    		cancel = setInterval(lightUp, 100);
+        }
+    });
+});
+</script>
+</head>
+<body>
+
+
+<button>Click me</button><br><br>
+
+<div id="id1">
+<div>*</div>
+</div>
+<div id="id2">
+<div>*</div>
+
+</div>
+<div id="id3">
+<div>*</div>
+
+</div>
+
+</body>
+</html>

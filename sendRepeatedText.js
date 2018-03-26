@@ -1,16 +1,25 @@
-function whatsAppText(text){
-	let textbox = document.getElementsByClassName("pluggable-input-body copyable-text selectable-text")[0];
+let whatsAppText = (text) => {
+	let textbox = document.getElementsByClassName("_2S1VP copyable-text selectable-text")[0];
 	textbox.textContent = text;
 	textbox.dispatchEvent(new Event('input',{bubbles:true}));
-	document.querySelector("button.compose-btn-send").click();
+	document.getElementsByClassName("_2lkdt")[0].click();
 }
 
 
-function sendRepeatedText(content, numberofTimes){
+let sendRepeatedText = (content, numberofTimes) => {
 	for(let i=0;i<numberofTimes;i++){
 		whatsAppText(content);
 	}
 };
+let getDetails = ()=> {
+	let message = prompt("enter your message here");
+	let numbers = null;
+	if(message!=null&&message!=''){
+		numbers = prompt("how many times do you want to send it");
+	}
+	if(message!=null&&message!=''&&numbers!=null&&numbers!=''){
+		sendRepeatedText(message, numbers);
+	}
+}
 
-
-sendRepeatedText("hii", 200);
+getDetails();
