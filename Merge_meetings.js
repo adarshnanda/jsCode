@@ -1,4 +1,24 @@
-var input = [{start_time:1,end_time:3},{start_time:2,end_time:4},{start_time:8,end_time:9},{start_time:5,end_time:8},{start_time:8,end_time:10}];
+var input = [];
+function generateInput(){
+var n = parseInt(Math.random()*10);
+for(var i=0;i<n;i++){
+    var obj = {};
+    obj.start_time =  parseInt(Math.random()*10);
+    obj.end_time = getEnd(obj.start_time);
+    input.push(obj);
+}
+};
+
+function getEnd(start_time){
+    var x = parseInt(Math.random()*10);
+    if(x<start_time){
+        x = getEnd(start_time);
+    }
+    return x;
+}
+
+
+//var input = [{start_time:1,end_time:3},{start_time:2,end_time:4},{start_time:8,end_time:9},{start_time:5,end_time:8},{start_time:8,end_time:10}];
 var output = [];
 function startMerging(input){
 	  var  temp1 = input[0];
@@ -53,4 +73,6 @@ function merge(input){
 	startMerging(input);
 	return output;
 };
+generateInput();
+console.log(input);
 merge(input); 
