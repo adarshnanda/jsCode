@@ -1,6 +1,4 @@
-
-// var input = [{start_time:1,end_time:10},{start_time:2,end_time:5},{start_time:3,end_time:6},{start_time:7,end_time:9}];
-var input = [{start_time:1,end_time:2},{start_time:9,end_time:10}];
+var input = [{start_time:1,end_time:3},{start_time:2,end_time:4},{start_time:8,end_time:9},{start_time:5,end_time:8},{start_time:8,end_time:10}];
 var output = [];
 function startMerging(input){
 	  var  temp1 = input[0];
@@ -37,7 +35,9 @@ function startMerging(input){
 	    startMerging(input);
 	  }else{
 		  if(input.length!=0){
-		    if(output.indexOf(input[0])==-1)
+		      if(output[output.length-1].end_time>=input[0].start_time){
+		          output[output.length-1].end_time = input[0].end_time;
+		      }else if(output.indexOf(input[0])==-1)
 			output.push(input[0]);  
 		  }
 	    return output;
@@ -54,5 +54,3 @@ function merge(input){
 	return output;
 };
 merge(input); 
-   
- 
