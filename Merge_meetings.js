@@ -18,7 +18,7 @@ function getEnd(start_time){
 }
 
 
-//var input = [{start_time:1,end_time:3},{start_time:2,end_time:4},{start_time:8,end_time:9},{start_time:5,end_time:8},{start_time:8,end_time:10}];
+var input = [{start_time:2,end_time:7},{start_time:2,end_time:5},{start_time:7,end_time:8},{start_time:9,end_time:9},{start_time:9,end_time:9},{start_time:8,end_time:9},{start_time:1,end_time:3},{start_time:5,end_time:8}];
 var output = [];
 function startMerging(input){
 	  var  temp1 = input[0];
@@ -67,12 +67,20 @@ function merge(input){
 	input.sort(function(a, b){
 	  return a.start_time -b.start_time;
 	});
+	var temp = input;
+	for(var i=0;i<input.length-1;i++){
+	    if(input[i].start_time == input[i+1].start_time && input[i].end_time == input[i+1].end_time){
+            temp.splice(i,1);
+	    }
+	}
+	input = temp;
+	temp = null;
 	if(input.length==1){
 	  return input;
 	}
 	startMerging(input);
 	return output;
 };
-generateInput();
+//generateInput();
 console.log(input);
 merge(input); 
