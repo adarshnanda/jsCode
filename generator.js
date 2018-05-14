@@ -1,4 +1,4 @@
-let array = ['https://adarshnanda93-test.apigee.net/adarsh/getName?name=nanda','https://adarshnanda93-test.apigee.net/adarsh/getName?name=adarsh'];
+let array = ['https://adarshnanda-eval-test.apigee.net/adarsh/getName?name=nanda','https://adarshnanda-eval-test.apigee.net/adarsh/getName?name=adarsh'];
 function *apiCalls(){
 	let length = array.length;
 	for(let i=0;i<length;i++){
