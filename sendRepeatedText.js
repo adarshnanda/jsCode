@@ -23,22 +23,24 @@ let getDetails = ()=> {
 }
 
 
+function createButton(callBack){
+	var button = document.createElement("button");
+	button.innerHTML = "Send Repeated text";
+	Object.assign(button.style,{
+  		"line-height": "20px",
+  		"font-weight": "bold",
+  		"padding": "0 40px",
+  		"background": "salmon",
+  		"border": "none",
+	});
+	var body = document.getElementsByClassName("_2umId")[0];
+	body.appendChild(button);
+	button.addEventListener ("click", function() {
+	  callBack();
+	});
+}
 
-var button = document.createElement("button");
-button.innerHTML = "Send Repeated text";
-Object.assign(button.style,{
-  "line-height": "20px",
-  "font-weight": "bold",
-  "padding": "0 40px",
-  "background": "salmon",
-  "border": "none",
-});
+createButton(getDetails);
 
-var body = document.getElementsByClassName("_2umId")[0];
-body.appendChild(button);
-
-button.addEventListener ("click", function() {
-  getDetails();
-});
 
 
