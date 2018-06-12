@@ -23,8 +23,8 @@ let getDetails = ()=> {
 }
 
 
-function createButton(callBack){
-	var button = document.createElement("button");
+let createButton = (callBack)=>{
+	let button = document.createElement("button");
 	button.innerHTML = "Send Repeated text";
 	Object.assign(button.style,{
   		"line-height": "20px",
@@ -33,7 +33,7 @@ function createButton(callBack){
   		"background": "salmon",
   		"border": "none",
 	});
-	var body = document.getElementsByClassName("_2umId")[0];
+	let body = document.getElementsByClassName("_2umId")[0];
 	body.appendChild(button);
 	button.addEventListener ("click", function() {
 	  callBack();
