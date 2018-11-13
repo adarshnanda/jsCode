@@ -2,7 +2,7 @@ let whatsAppText = (text) => {
 	let textbox = document.getElementsByClassName("_2S1VP copyable-text selectable-text")[0];
 	textbox.textContent = text;
 	textbox.dispatchEvent(new Event('input',{bubbles:true}));
-	document.getElementsByClassName("_2lkdt")[0].click();
+	document.getElementsByClassName("_35EW6")[0].click();
 }
 
 
