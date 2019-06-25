@@ -1,17 +1,17 @@
-let whatsAppText = (text) => {
-	let textbox = document.getElementsByClassName("_2S1VP copyable-text selectable-text")[0];
+var whatsAppText = (text) => {
+	let textbox = document.getElementsByClassName("_3u328 copyable-text selectable-text")[0];
 	textbox.textContent = text;
 	textbox.dispatchEvent(new Event('input',{bubbles:true}));
-	document.getElementsByClassName("_35EW6")[0].click();
+	document.getElementsByClassName("_3M-N-")[0].click();
 }
 
 
-let sendRepeatedText = (content, numberofTimes) => {
+var sendRepeatedText = (content, numberofTimes) => {
 	for(let i=0;i<numberofTimes;i++){
 		whatsAppText(content);
 	}
 };
-let getDetails = ()=> {
+var getDetails = ()=> {
 	let message = prompt("enter your message here");
 	let numbers = null;
 	if(message!=null&&message!=''){
@@ -23,7 +23,7 @@ let getDetails = ()=> {
 }
 
 
-let createButton = (callBack)=>{
+var createButton = (callBack)=>{
 	let button = document.createElement("button");
 	button.innerHTML = "Send Repeated text";
 	Object.assign(button.style,{
@@ -33,14 +33,10 @@ let createButton = (callBack)=>{
   		"background": "salmon",
   		"border": "none",
 	});
-	let body = document.getElementsByClassName("_2umId")[0];
+	let body = document.getElementsByClassName("_3Jvyf")[0];
 	body.appendChild(button);
 	button.addEventListener ("click", function() {
 	  callBack();
 	});
 }
-
 createButton(getDetails);
-
-
-
