@@ -14,10 +14,10 @@ var sendRepeatedText = (content, numberofTimes) => {
 var getDetails = ()=> {
 	let message = prompt("enter your message here");
 	let numbers = null;
-	if(message!=null&&message!=''){
+	if(message){
 		numbers = prompt("how many times do you want to send it");
 	}
-	if(message!=null&&message!=''&&numbers!=null&&numbers!=''){
+	if(message &&numbers){
 		sendRepeatedText(message, numbers);
 	}
 }
@@ -35,8 +35,6 @@ var createButton = (callBack)=>{
 	});
 	let body = document.getElementsByClassName("_3Jvyf")[0];
 	body.appendChild(button);
-	button.addEventListener ("click", function() {
-	  callBack();
-	});
+	button.addEventListener ("click", callBack);
 }
 createButton(getDetails);
