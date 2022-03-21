@@ -1,8 +1,8 @@
 var whatsAppText = (text) => {
-	let textbox = document.getElementsByClassName("_3u328 copyable-text selectable-text")[0];
+	let textbox = document.getElementsByClassName("_13NKt copyable-text selectable-text")[1];
 	textbox.textContent = text;
 	textbox.dispatchEvent(new Event('input',{bubbles:true}));
-	document.getElementsByClassName("_3M-N-")[0].click();
+	document.getElementsByClassName("_4sWnG")[0].click();
 }
 
 
@@ -33,7 +33,7 @@ var createButton = (callBack)=>{
   		"background": "salmon",
   		"border": "none",
 	});
-	let body = document.getElementsByClassName("_3Jvyf")[0];
+	let body = document.getElementsByClassName("_1G3Wr")[0];
 	body.appendChild(button);
 	button.addEventListener ("click", callBack);
 }
